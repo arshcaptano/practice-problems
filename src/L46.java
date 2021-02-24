@@ -48,7 +48,7 @@ public class L46 {
             return lists;
         }
 
-        swapx(lists, nums, 0, 0);
+        swap(lists, nums, 0, 0);
 
         return lists;
     }
@@ -71,30 +71,6 @@ public class L46 {
 
             return swap(lists, nums, i, i + 1);
         }
-    }
-
-    public int[] swapx(List<List<Integer>> lists, int[] nums, int i, int j) {
-        nums[i] = (nums[i] + nums[j]) - (nums[j] = nums[i]);
-
-        List<Integer> list = new ArrayList<>();
-        for (int num : nums)
-            list.add(num);
-
-        if (!exists(lists, list))
-            lists.add(list);
-
-        j++;
-
-        if (j == nums.length) {
-            j = 0;
-
-            i++;
-
-            if (i == nums.length) return nums;
-        }
-
-
-        return swapx(lists, nums, i, j);
     }
 
     private boolean exists(List<List<Integer>> lists, List<Integer> checkList) {

@@ -10,9 +10,9 @@ public class L12 {
         M             1000
      */
     public static void main(String[] args) {
-        int num = 58; //100 - 10 - 1 > C - XX - I
+        int num = 58;
 
-        System.out.println(new L12().intToRoman2(num));
+        System.out.println(new L12().intToRoman(num));
     }
 
     private String intToRoman(int num) {
@@ -102,56 +102,6 @@ public class L12 {
             }
         }
         return sb.toString();
-    }
-
-    private String convert(int num) {
-        StringBuilder roman = new StringBuilder();
-
-        if (num >= 1 && num < 5) {
-            for (int i = 1; i <= num; i++) {
-                if (i == 4)
-                    roman = new StringBuilder("IV");
-                else
-                    roman.append("I");
-            }
-        } else if (num >= 5 && num < 10) {
-            for (int i = 1; i <= num; i++) {
-                if (i == 9)
-                    roman = new StringBuilder("IX");
-                else
-                    roman.append("V");
-            }
-        } else if (num >= 10 && num < 50) {
-            for (int i = 1; i <= num; i++) {
-                if (i == 40)
-                    roman = new StringBuilder("XL");
-                else
-                    roman.append("X");
-            }
-        } else if (num >= 50 && num < 100) {
-            for (int i = 1; i <= num; i++) {
-                if (i == 90)
-                    roman = new StringBuilder("XC");
-                else
-                    roman.append("L");
-            }
-        } else if (num >= 100 && num < 500) {
-            for (int i = 1; i <= num; i++) {
-                if (i == 400)
-                    roman = new StringBuilder("CD");
-                else
-                    roman.append("C");
-            }
-        } else if (num >= 500 && num < 1000) {
-            for (int i = 1; i <= num; i++) {
-                if (i == 900)
-                    roman = new StringBuilder("CM");
-                else
-                    roman.append("D");
-            }
-        } else if (num >= 1000) roman = new StringBuilder("M");
-
-        return roman.toString();
     }
 
 }
