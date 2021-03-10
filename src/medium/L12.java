@@ -1,3 +1,5 @@
+package medium;
+
 public class L12 {
     /*
         Symbol       Value

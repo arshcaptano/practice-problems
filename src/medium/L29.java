@@ -1,3 +1,5 @@
+package medium;
+
 public class L29 {
     public static void main(String[] args) {
         System.out.println(new L29().divide(-1, -1));

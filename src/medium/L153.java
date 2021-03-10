@@ -1,3 +1,5 @@
+package medium;
+
 import java.util.Arrays;
 
 public class L153 {
