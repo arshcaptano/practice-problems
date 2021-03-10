@@ -7,22 +7,6 @@ fun main() {
 
 fun longestPalindrome(s: String): String {
     /*
-        cb bd -> none (at 0)
-        bab ad -> bab
-        bab ddd -> (a or b) bab
-        abaq abaz - >(a is in b) aba
-        aba aba -> (a == b) aba
-     */
-    val len = s.length
-    var palindrome = ""
-
-    // TODO
-
-    return palindrome
-}
-
-fun longestPalindrome2(s: String): String {
-    /*
         cbbd -> c, cb , cbb, cbbd -> loop(1 + 2 + 3 + 4) : Total 4 + 10
         bbd -> b, bb, bbd -> loop(1 + 2 + 3) : Total 3 + 7
         bd -> b, bd - > loop(1 + 2) : Total 2 + 3
