@@ -1,4 +1,4 @@
-package test.leetcode.medium
+package leetcode.medium
 
 import junit.framework.Assert.assertEquals
 import leetcode.medium.decodeString

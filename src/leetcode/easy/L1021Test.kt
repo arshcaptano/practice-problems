@@ -1,4 +1,4 @@
-package test.leetcode.easy
+package leetcode.easy
 
 import junit.framework.Assert.assertEquals
 import leetcode.easy.removeOuterParentheses
