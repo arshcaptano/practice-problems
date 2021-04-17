@@ -17,7 +17,7 @@ fun main() {
 
 }
 
-private fun decodeString(s: String): String {
+fun decodeString(s: String): String {
     val sb = StringBuilder()
     var temp = StringBuilder()
     var charCount = "0"
@@ -70,7 +70,6 @@ private fun decodeString(s: String): String {
 private fun substring(i: Int, s: String): String {
     val offset: Int
     val sub = s.substring(i)
-    val newSub: String
 
     var open = 0
     var close = 0
@@ -80,8 +79,7 @@ private fun substring(i: Int, s: String): String {
         else if (sub[k] == ']') close++
 
         if (kotlin.math.abs(open - close) == 0) {
-            newSub = sub.substring(0, k + 1)
-            return newSub
+            return sub.substring(0, k + 1)
         }
     }
 
