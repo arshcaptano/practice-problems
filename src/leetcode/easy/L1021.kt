@@ -3,13 +3,13 @@ package leetcode.easy
 import java.lang.StringBuilder
 
 fun main() {
-    val ss = arrayOf(
-//        "(()())(())", // -> ()()()
+    val sList = arrayOf(
+        "(()())(())", // -> ()()()
         "(()())(())(()(()))", // -> ()()()()(()) // TODO
-//        "()()" // ->
+        "()()" // ->
     )
 
-    for (s in ss)
+    for (s in sList)
         println(removeOuterParentheses(s))
 }
 

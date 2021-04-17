@@ -2,34 +2,29 @@ package leetcode.easy;
 
 public class L20 {
     public static void main(String[] args) {
-        ListNode l1 = new ListNode(1);
-        l1.next = new ListNode(2);
-        l1.next.next = new ListNode(4);
+        ListNodeL20 l1 = new ListNodeL20(1);
+        l1.next = new ListNodeL20(2);
+        l1.next.next = new ListNodeL20(4);
 
-        ListNode l2 = new ListNode(6);
-        l2.next = new ListNode(7);
-        l2.next.next = new ListNode(8);
+        ListNodeL20 l2 = new ListNodeL20(6);
+        l2.next = new ListNodeL20(7);
+        l2.next.next = new ListNodeL20(8);
 
-//        System.out.println("\nL1");
-//        print(l1);
-//        System.out.println("\nL2");
-//        print(l2);
-//        System.out.println("\nL3");
         new L20().mergeTwoLists(l1, l2);
     }
 
-    private ListNode mergeTwoLists(ListNode l1, ListNode l2) {
+    private ListNodeL20 mergeTwoLists(ListNodeL20 l1, ListNodeL20 l2) {
         if(l1 == null) return l2;
         if(l2 == null) return l1;
 
         if(l1.val >l2.val){
-            ListNode temp = l1;
+            ListNodeL20 temp = l1;
             l1 = l2;
             l2 = temp;
         }
 
-        ListNode temp;
-        ListNode head = l1;
+        ListNodeL20 temp;
+        ListNodeL20 head = l1;
 
         while(l1.next != null){
             // 1 - 2 - 4 l1
@@ -63,7 +58,7 @@ public class L20 {
         return head;
     }
 
-    public static void print(ListNode node) {
+    public static void print(ListNodeL20 node) {
         while (node != null) {
             System.out.println(node.val);
             node = node.next;
@@ -71,11 +66,11 @@ public class L20 {
     }
 }
 
-class ListNode {
+  class ListNodeL20 {
     int val;
-    ListNode next;
+    ListNodeL20 next;
 
-    ListNode(int d) {
+    ListNodeL20(int d) {
         val = d;
     }
 }
