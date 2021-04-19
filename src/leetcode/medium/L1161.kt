@@ -6,20 +6,22 @@ var lvl = 1
 
 fun main() {
     val root = TreeNode(1)
-    root.left = TreeNode(7)
+    root.left = TreeNode(6)
     root.right = TreeNode(0)
-    root.right?.left = TreeNode(7)
-    root.right?.right = TreeNode(-8)
+    root.left?.left = TreeNode(7)
+    root.left?.right = TreeNode(-8)
+    root.right?.right = TreeNode(0)
+    root.left?.right?.right = TreeNode(10)
     /*
                     1
                    / \
-                  7   0
+                  6   0
                  / \
                 7  -8
               -----------------
                     1
                    / \
-                  7   0
+                  6   0
                      / \
                     7  -8
               -----------------
@@ -28,6 +30,22 @@ fun main() {
                  -200   -300
                   / \     /
                -20  -5  -10
+              -----------------
+                    1
+                   / \
+                  6   0
+                 / \   \
+                7  -8   0
+                     \
+                      10
+              -----------------
+                    1
+                   / \
+                  16   0
+                 / \   \
+                7  -8   0
+                     \
+                      10
      */
 
     map = HashMap<Int, Int>()
@@ -47,28 +65,20 @@ fun maxLevelSum(root: TreeNode?): Int {
     if (root.left == null && root.right == null) return lvl
 
     lvl++
-    if (root.left != null && root.right == null) {
-        map[lvl--] = root.left?.`val`!!
-        return lvl
-    }
-    if (root.left == null && root.right != null) {
-        map[lvl--] = root.right?.`val`!!
-        return lvl
-    }
-
     maxLevelSum(root.left)
     maxLevelSum(root.right)
     lvl--
 
-    return maxLevel(map)
+    return maxLevel()
 }
 
-fun maxLevel(map: HashMap<Int, Int>): Int {
-    var key = 0
+fun maxLevel(): Int {
+    var key = 1
+    val `val` = map.entries.stream().findFirst().get().value
 
-    for (curr in map.entries) {
-        if (curr.value > key)
-            key = curr.key
+    for (m in map.entries) {
+        if (m.value > `val`)
+            key = m.key
     }
 
     return key

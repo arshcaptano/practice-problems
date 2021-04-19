@@ -8,7 +8,7 @@ class L1161Test {
     fun maxLevelSumA() {
         // [1,7,0,7,-8,null,null]
         val root = TreeNode(1)
-        root.left = TreeNode(7)
+        root.left = TreeNode(6)
         root.right = TreeNode(0)
         root.left?.left = TreeNode(7)
         root.left?.right = TreeNode(-8)
@@ -23,7 +23,7 @@ class L1161Test {
     fun maxLevelSumB() {
         // [1,7,0,7,-8,null,null,null,null,null,10]
         val root = TreeNode(1)
-        root.left = TreeNode(7)
+        root.left = TreeNode(6)
         root.right = TreeNode(0)
         root.left?.left = TreeNode(7)
         root.left?.right = TreeNode(-8)
@@ -39,7 +39,7 @@ class L1161Test {
     fun maxLevelSumC() {
         // [1,7,0,7,-8,null,0,null,null,null,10,null,null]
         val root = TreeNode(1)
-        root.left = TreeNode(7)
+        root.left = TreeNode(6)
         root.right = TreeNode(0)
         root.left?.left = TreeNode(7)
         root.left?.right = TreeNode(-8)
@@ -96,5 +96,22 @@ class L1161Test {
         lvl = 1
 
         assertEquals(3, maxLevelSum(root))
+    }
+
+    @Test
+    fun maxLevelSumG() {
+        // [1,7,0,7,-8,null,0,null,null,null,10,null,null]
+        val root = TreeNode(1)
+        root.left = TreeNode(16)
+        root.right = TreeNode(0)
+        root.left?.left = TreeNode(7)
+        root.left?.right = TreeNode(-8)
+        root.right?.right = TreeNode(0)
+        root.left?.right?.right = TreeNode(10)
+
+        map = HashMap<Int, Int>()
+        lvl = 1
+
+        assertEquals(2, maxLevelSum(root))
     }
 }
