@@ -1,47 +1,64 @@
 package leetcode.medium
 
 
+var map = HashMap<Int, Int>()
+var lvl = 1
+
 fun main() {
     val root = TreeNode(1)
     root.left = TreeNode(7)
     root.right = TreeNode(0)
-    root.left?.left = TreeNode(7)
-    root.left?.right = TreeNode(-8)
+    root.right?.left = TreeNode(7)
+    root.right?.right = TreeNode(-8)
     /*
                     1
                    / \
                   7   0
                  / \
                 7  -8
+              -----------------
+                    1
+                   / \
+                  7   0
+                     / \
+                    7  -8
+              -----------------
+                    -100
+                     / \
+                 -200   -300
+                  / \     /
+               -20  -5  -10
      */
 
+    map = HashMap<Int, Int>()
+    lvl = 1
     println(maxLevelSum(root))
 }
 
-val map = HashMap<Int, Int>()
-var lvl = 1
-
 fun maxLevelSum(root: TreeNode?): Int {
-    if (lvl == 1) map[lvl] = root?.`val` ?: 0
-    if (root?.left == null && root?.right == null) return lvl--
-    if (root.left == null && root.right != null) {
-        map[lvl] = root.right?.`val`!!
-        return lvl
-    }
-    if (root.left != null && root.right == null) {
-        map[lvl] = root.left?.`val`!!
-        return lvl
-    }
+    if (root?.`val` == null) return lvl
 
-    lvl++
-    val sum: Int = root.left?.`val`!! + root.right?.`val`!!
+    val sum: Int = root.`val`
     if (map.containsKey(lvl))
         map[lvl] = map[lvl]!! + sum
     else
         map[lvl] = sum
 
+    if (root.left == null && root.right == null) return lvl
+
+    lvl++
+    if (root.left != null && root.right == null) {
+        map[lvl--] = root.left?.`val`!!
+        return lvl
+    }
+    if (root.left == null && root.right != null) {
+        map[lvl--] = root.right?.`val`!!
+        return lvl
+    }
+
     maxLevelSum(root.left)
     maxLevelSum(root.right)
+    lvl--
 
     return maxLevel(map)
 }

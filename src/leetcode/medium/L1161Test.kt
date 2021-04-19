@@ -13,6 +13,9 @@ class L1161Test {
         root.left?.left = TreeNode(7)
         root.left?.right = TreeNode(-8)
 
+        map = HashMap<Int, Int>()
+        lvl = 1
+
         assertEquals(2, maxLevelSum(root))
     }
 
@@ -25,6 +28,9 @@ class L1161Test {
         root.left?.left = TreeNode(7)
         root.left?.right = TreeNode(-8)
         root.left?.right?.right = TreeNode(10)
+
+        map = HashMap<Int, Int>()
+        lvl = 1
 
         assertEquals(4, maxLevelSum(root))
     }
@@ -40,6 +46,9 @@ class L1161Test {
         root.right?.right = TreeNode(0)
         root.left?.right?.right = TreeNode(10)
 
+        map = HashMap<Int, Int>()
+        lvl = 1
+
         assertEquals(4, maxLevelSum(root))
     }
 
@@ -51,6 +60,9 @@ class L1161Test {
         root.right = TreeNode(0)
         root.right?.left = TreeNode(7)
         root.right?.right = TreeNode(-8)
+
+        map = HashMap<Int, Int>()
+        lvl = 1
 
         assertEquals(2, maxLevelSum(root))
     }
@@ -64,6 +76,9 @@ class L1161Test {
         root.right?.right = TreeNode(-89388)
         root.right?.right?.right = TreeNode(-32127)
 
+        map = HashMap<Int, Int>()
+        lvl = 1
+
         assertEquals(2, maxLevelSum(root))
     }
 
@@ -76,6 +91,9 @@ class L1161Test {
         root.left?.left = TreeNode(-20)
         root.left?.right = TreeNode(-5)
         root.right?.left = TreeNode(-10)
+
+        map = HashMap<Int, Int>()
+        lvl = 1
 
         assertEquals(3, maxLevelSum(root))
     }
