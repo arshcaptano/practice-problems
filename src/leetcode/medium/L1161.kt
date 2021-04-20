@@ -48,7 +48,7 @@ fun main() {
                       10
      */
 
-    map = HashMap<Int, Int>()
+    map = HashMap()
     lvl = 1
     println(maxLevelSum(root))
 }

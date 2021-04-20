@@ -12,6 +12,15 @@ fun main() {
         "3[a10[bc]]"
     )
 
+    /*
+     "3[z]2[2[y]pq4[2[jk]e1[f]]]ef"
+          2[2[y]pq4[2[jk]e1[f]]]
+            2[y]
+                pq
+                  4[2[jk]e1[f]]
+                    2[jk]e1[f]
+     */
+
     for (i in sList.indices)
         println(decodeString(sList[i]))
 

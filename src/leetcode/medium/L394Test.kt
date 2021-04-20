@@ -1,7 +1,6 @@
 package leetcode.medium
 
 import junit.framework.Assert.assertEquals
-import leetcode.medium.decodeString
 import org.junit.Test
 
 class L394Test {
