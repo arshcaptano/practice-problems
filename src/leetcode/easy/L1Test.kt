@@ -18,4 +18,9 @@ class L1Test {
     fun twoSumC() {
         assertArrayEquals(intArrayOf(0, 1), twoSum(intArrayOf(3, 3), 6))
     }
+
+    @Test
+    fun twoSumD() {
+        assertArrayEquals(intArrayOf(1,2), twoSum(intArrayOf(2,5,5,11), 10))
+    }
 }
