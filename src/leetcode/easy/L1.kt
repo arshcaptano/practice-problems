@@ -2,28 +2,28 @@ package leetcode.easy
 
 
 fun main() {
-    val nums = intArrayOf(2, 7, 11, 15)
-    val target = 9
+    val nums = intArrayOf(2, 5, 5, 11)
+    val target = 10
 
     println(twoSum(nums, target))
 }
 
 fun twoSum(nums: IntArray, target: Int): IntArray {
-    val indices = IntArray(2)
-    var sum = 0
+    val indices = ArrayDeque<Int>()
 
     for (i in 0..nums.size) {
-        if (nums[i] < target || sum + nums[i] == target) {
-            if (sum == 0) indices[0] = i
-            else indices[i] = i
+        indices.add(i)
 
-            sum += nums[i]
+        for (j in i + 1 until nums.size) {
+            if (target - nums[i] == nums[j]) {
+                indices.add(j)
+                return indices.toIntArray()
+            }
         }
 
-        if (sum == target)
-            break
-
+        if (!indices.isEmpty())
+            indices.removeLast()
     }
 
-    return indices
+    return indices.toIntArray()
 }
