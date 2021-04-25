@@ -1,7 +1,5 @@
 package leetcode.medium
 
-import java.lang.StringBuilder
-
 
 fun main() {
     val s = "  Bob    Loves  Alice   "
@@ -12,9 +10,9 @@ fun reverseWords(s: String): String {
     val rs = s.trim().split("\\s+".toRegex())
     val sb = StringBuilder()
 
-    for (i in rs.size - 1 downTo 0) {
+    for (i in rs.size - 1 downTo 0)
         sb.append(rs[i] + " ")
-    }
+
     return sb.toString().trim()
 }
 

@@ -10,12 +10,13 @@ fun main() {
 
 fun twoSum(nums: IntArray, target: Int): IntArray {
     val map = HashMap<Int, Int>()
+
     for (i in 0..nums.size) {
-        if (map.containsKey(target - nums[i])) {
+        if (map.containsKey(target - nums[i]))
             return intArrayOf(map[target - nums[i]]!!, i)
-        } else {
+        else
             map[nums[i]] = i
-        }
+
     }
 
     return IntArray(2)
