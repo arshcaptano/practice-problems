@@ -9,13 +9,11 @@ fun main() {
 }
 
 fun reverseWords(s: String): String {
-    val rs = s.split(" ")
+    val rs = s.trim().split("\\s+".toRegex())
     val sb = StringBuilder()
 
     for (i in rs.size - 1 downTo 0) {
-        if (rs[i] != "") {
-            sb.append(rs[i] + " ")
-        }
+        sb.append(rs[i] + " ")
     }
     return sb.toString().trim()
 }
