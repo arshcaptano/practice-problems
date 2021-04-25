@@ -9,6 +9,19 @@ fun main() {
 }
 
 fun twoSum(nums: IntArray, target: Int): IntArray {
+    val map = HashMap<Int, Int>()
+    for (i in 0..nums.size) {
+        if (map.containsKey(target - nums[i])) {
+            return intArrayOf(map[target - nums[i]]!!, i)
+        } else {
+            map[nums[i]] = i
+        }
+    }
+
+    return IntArray(2)
+}
+
+fun twoSumA(nums: IntArray, target: Int): IntArray {
     val indices = ArrayDeque<Int>()
 
     for (i in 0..nums.size) {
@@ -27,3 +40,4 @@ fun twoSum(nums: IntArray, target: Int): IntArray {
 
     return indices.toIntArray()
 }
+
