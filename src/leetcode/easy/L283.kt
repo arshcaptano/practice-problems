@@ -13,9 +13,9 @@ fun moveZeroes(nums: IntArray): Unit {
     var i = 0
     while (i < n) {
         if (nums[i] == 0) {
-            for (j in i until n - 1) {
+            for (j in i until n - 1)
                 nums[j] = nums[j + 1]
-            }
+
             nums[n - 1] = 0
             n--
         } else {
