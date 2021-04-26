@@ -1,7 +1,7 @@
 package leetcode.easy
 
 fun main() {
-    val nums = intArrayOf(1, 1, 1, 1, 1)
+    val nums = intArrayOf(1, 2, 3, 2)
     println(sumOfUnique(nums))
 }
 
@@ -12,7 +12,6 @@ fun sumOfUnique(nums: IntArray): Int {
             map[nums[i]] = !map.contains(nums[i])
         else
             map[nums[i]] = true
-
     }
 
     var sum = 0
