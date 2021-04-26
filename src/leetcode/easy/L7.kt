@@ -8,6 +8,24 @@ fun main() {
 }
 
 fun reverse(x: Int): Int {
+    if (x == 0) return 0
+
+    val sign = if (x < 0) -1 else 1
+    var reverse = 0
+    var y = sign * x
+
+    while (y > 0) {
+        val temp = y % 10
+        if (reverse > (Int.MAX_VALUE - temp) / 10) {
+            return 0
+        }
+        reverse = reverse * 10 + temp
+        y /= 10
+    }
+    return reverse * sign
+}
+
+fun reverseA(x: Int): Int {
     val sb = StringBuilder()
     val s = x.toString()
     var prefix = "+"
@@ -17,10 +35,10 @@ fun reverse(x: Int): Int {
             prefix = s[i].toString()
         else
             sb.append(s[i])
+
+        if (sb.toString().toLong() < Int.MIN_VALUE || sb.toString().toLong() > Int.MAX_VALUE)
+            return 0
     }
 
-    return if (sb.toString().toLong() < Int.MIN_VALUE || sb.toString().toLong() > Int.MAX_VALUE)
-        0
-    else
-        (prefix + sb).toInt()
+    return (prefix + sb).toInt()
 }
