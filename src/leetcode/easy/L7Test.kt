@@ -35,4 +35,9 @@ class L7Test {
     fun reverseF() {
         assertEquals(-21, reverse(-120))
     }
+
+    @Test
+    fun reverseG() {
+        assertEquals(0, reverse(1534236469))
+    }
 }
