@@ -7,7 +7,7 @@ fun main() {
 
 class Solution {
     private val result: MutableList<String> = mutableListOf()
-    private val mapping: HashMap<Char, String> = hashMapOf(
+    private val map: HashMap<Char, String> = hashMapOf(
         '2' to "abc",
         '3' to "def",
         '4' to "ghi",
@@ -19,18 +19,37 @@ class Solution {
     )
 
     fun letterCombinations(digits: String): List<String> {
-
-
         val item = StringBuilder()
 
         if (digits.isEmpty())
             return result
 
+        for (digit in digits)
+            generateElement(digit, item)
+
+        result.add(item.toString())
+
+        item.clear()
 
         return result
     }
 
-    private fun generateElement() {
+    private fun generateElement(digit: Char, element: StringBuilder): StringBuilder {
+        val letters = map[digit] ?: ""
 
+        if (letters.isEmpty())
+            return element
+
+        for (letter in letters)
+            element.append(letter)
+
+        return element
     }
 }
+
+/*
+    "a",    "b",    "c"
+    "ad",   "ae",   "af"
+    "adp",  "adq",  "adr"
+    "adgp", "adgq", "adgr"
+ */
