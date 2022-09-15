@@ -1,11 +1,11 @@
 package leetcode.medium
 
 fun main() {
-    val output = Solution().letterCombinations("234")
+    val output = L017().letterCombinations("234")
     println(output)
 }
 
-class Solution {
+class L017 {
     private val result: MutableList<String> = mutableListOf()
     private val map: HashMap<Char, String> = hashMapOf(
         '2' to "abc",
