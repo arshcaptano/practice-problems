@@ -1,4 +1,4 @@
-package leetcode.medium
+package leetcode.easy
 
 fun main() {
     val output = L017().letterCombinations("234")
