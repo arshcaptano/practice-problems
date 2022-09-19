@@ -1,21 +1,22 @@
 package leetcode.medium
 
 fun main() {
-    val output = numRescueBoats(intArrayOf(4,2,2,1), 4)
+    val output = numRescueBoats(intArrayOf(1,2,4,5), 6)
     print(output)
 }
 
 fun numRescueBoats(people: IntArray, limit: Int): Int {
     /*
-     2,1 - 3 -> 1
-     5, 4, 3, 3, 1 - 5 -> 4
-     4, 2, 2, 1 - 4 -> 3
-     4, 2, 1, 1 - 4 -> 2
-     4, 3, 2, 1 - 4 -> 3
-     4, 4, 1, 1 - 4 -> 3
-     5, 3, 2, 1 - 5 -> 3
-     5, 2, 1, 1, 1, 1 - 5 -> 3
-     4, 2 - 5 -> 2
+    2, 1 - 3 -> 1
+    5, 4, 3, 3, 1 - 5 -> 4
+    4, 2, 2, 1 - 4 -> 3
+    4, 2, 1, 1 - 4 -> 3
+    4, 3, 2, 1 - 4 -> 3
+    4, 4, 1, 1 - 4 -> 3
+    5, 3, 2, 1 - 5 -> 3
+    5, 2, 1, 1, 1, 1 - 5 -> 3
+    4, 2 - 5 -> 2
+    1, 2, 4, 5 - 6 -> 2
   */
     if (people.size == 1)
         return 1
