@@ -16,7 +16,10 @@ fun findMinDifference(timePoints: List<String>): Int {
     var track = sortedPoints.size - 2
     var end = sortedPoints.size - 1
     while (track >= 0) {
-        val tempDiff = sortedPoints[end] - sortedPoints[track]
+        val endMinutes = getDiffMinutes(sortedPoints[end])
+        val trackMinutes = getDiffMinutes(sortedPoints[track])
+        val tempDiff = endMinutes - trackMinutes
+
         diff = Math.min(tempDiff, diff)
 
         track--
@@ -33,4 +36,10 @@ fun sortTimePoints(timePoints: List<String>): List<Double> {
         sortedPoints.add(element.replace(':', '.').toDouble())
     }
     return sortedPoints.sorted()
+}
+
+fun getDiffMinutes(time: Double): Double {
+   val diff = 0.0
+    // TODO
+    return diff
 }
