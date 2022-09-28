@@ -1,7 +1,10 @@
 package leetcode.easy
 
 fun main() {
-    println(reverseVowels("Hello"))
+    val strings = listOf("hello", "leetcode")
+
+    for (string in strings)
+        println(reverseVowels(string))
 }
 
 fun reverseVowels(s: String): String {
