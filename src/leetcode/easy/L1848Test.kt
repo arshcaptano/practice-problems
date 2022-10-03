@@ -1,4 +1,4 @@
-package leetcode.medium
+package leetcode.easy
 
 import junit.framework.Assert.assertEquals
 import leetcode.easy.getMinDistance
